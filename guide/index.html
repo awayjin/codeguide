@@ -6,24 +6,42 @@
         content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet">
+  <!--<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">-->
   <title>code-guide</title>
   <style>
     /*
  * Fonts
  */
 
+   /* @font-face {
+      font-family: 'Glyphicons Halflings';
+      src: url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot');
+      src: url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff') format('woff'), url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+    }*/
+
+    .glyphicon {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     @font-face {
       font-family: "fontello";
       font-weight: normal;
       font-style: normal;
 
-      src: url("../fonts/fontello.eot");
-      src: url("../fonts/fontello.eot#iefix") format("embedded-opentype"),
-      url("../fonts/fontello.woff") format("woff"),
-      url("../fonts/fontello.ttf") format("truetype"),
-      url("../fonts/fontello.svg") format("svg");
+      /*font-family: 'Glyphicons Halflings';
+      src: url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot');
+      src: url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff') format('woff'), url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+*/
     }
-
+    /*https://cdn.bootcss.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot*/
     [class^="icon-"]:before,
     [class*="icon-"]:before {
       display: inline-block;
@@ -657,7 +675,7 @@
     }
     .fixed {
       position: fixed;
-      top: 10px;
+      top: 20px;
       max-height: 600px;
       overflow-x: auto;
     }
@@ -672,6 +690,18 @@
       cursor: pointer;
     }
     h4 { cursor: pointer;}
+
+    .glyphicon {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+    }
+    .glyphicon-down:before {content: "\e113";}
   </style>
   <style>
     /* body {
@@ -684,6 +714,21 @@
      div.col-8 div {
        height: 500px;
      }*/
+  </style>
+  <style>
+    /*空心下拉箭头*/
+    .triangle-up {
+      width: 10px;
+      height: 10px;
+      border:#999 solid;
+      display: inline-block;
+      border-width: 2px 2px 0 0;
+      transform: rotate(135deg);
+      margin-bottom: 6px;
+      margin-right: 10px;
+    }
+    #sidebarWrap > li { list-style: none; }
+    .fixed-margin-top { margin-top: 20px; }
   </style>
 </head>
 <body >
@@ -698,62 +743,96 @@
 <div class="container-fluid" id="app">
   <div class="row">
     <!-- 左侧 Begin -->
-    <nav class="col-sm-3 col-4">
+    <nav class="col-sm-3 col-4 fixed-margin-top">
       <ul class="" id="sidebarWrap">
         <li class="nav-item">
           <h4 data-toggle="collapse" data-target="#nav-named">
-            <!--<span class="triangle-right"></span>-->
-            <a >命名规则</a>
+            <span class="triangle-up"></span>1.0 命名规则
           </h4>
           <ul id="nav-named" class="collapse show">
-            <li><a href="#project-naming">项目命名</a></li>
-            <li><a href="#folder-naming">目录命名</a></li>
-            <li><a href="#js-naming">JS文件命名</a></li>
-            <li><a href="#css-naming">CSS, LESS文件命名</a></li>
-            <li><a href="#html-naming">HTML文件命名</a></li>
+            <li><a href="#project-naming">1.1 项目命名</a></li>
+            <li><a href="#folder-naming">1.2 目录命名</a></li>
+            <li><a href="#js-naming">1.3 JS文件命名</a></li>
+            <li><a href="#css-naming">1.4 CSS, LESS文件命名</a></li>
+            <li><a href="#html-naming">1.5 HTML文件命名</a></li>
           </ul>
         </li>
 
         <!-- HTML-title Begin -->
         <li>
-          <h4  data-toggle="collapse" data-target="#nav-html"><a>HTML</a></h4>
+          <h4  data-toggle="collapse" data-target="#nav-html">
+            <span class="triangle-up"></span>2.0 HTML
+          </h4>
           <ul id="nav-html" class="collapse ">
-            <li><a href="#html-syntax">语法</a></li>
-            <li><a href="#html-doctype">HTML5 doctype</a></li>
-            <li><a href="#html-lang">lang属性</a></li>
-            <li><a href="#html-encoding">字符编码</a></li>
-            <li><a href="#html-ie-compatibility-mode">IE兼容模式</a></li>
-            <li><a href="#html-style-script">引入CSS, JS</a></li>
-            <li><a href="#html-attribute-order">属性顺序</a></li>
-            <li><a href="#html-boolean-attributes">boolean属性</a></li>
-            <li><a href="#html-javascript">JS生成标签</a></li>
-            <li><a href="#html-reducing-markup">减少标签数量</a></li>
-            <li><a href="#html-practicality">实用高于完美</a></li>
+            <li><a href="#html-syntax">2.1 语法</a></li>
+            <li><a href="#html-doctype">2.2 HTML5 doctype</a></li>
+            <li><a href="#html-lang">2.3 lang属性</a></li>
+            <li><a href="#html-encoding">2.4 字符编码</a></li>
+            <li><a href="#html-ie-compatibility-mode">2.5 IE兼容模式</a></li>
+            <li><a href="#html-style-script">2.6 引入CSS, JS</a></li>
+            <li><a href="#html-attribute-order">2.7 属性顺序</a></li>
+            <li><a href="#html-boolean-attributes">2.8 boolean属性</a></li>
+            <li><a href="#html-javascript">2.9 JS生成标签</a></li>
+            <li><a href="#html-reducing-markup">2.10 减少标签数量</a></li>
+            <li><a href="#html-practicality">2.11 实用高于完美</a></li>
           </ul>
         </li>
         <!-- HTML-title End -->
 
         <!-- css-title Begin -->
         <li>
-          <h4  data-toggle="collapse" data-target="#nav-css"><a>CSS, LESS</a></h4>
-          <ul id="nav-css" class="collapse show">
-            <li><a href="#css-indentation">缩进</a></li>
-            <li><a href="#css-semicolon">分号</a></li>
-            <li><a href="#css-space">空格</a></li>
-            <li><a href="#css-blank-line">空行</a></li>
-            <li><a href="#css-new-line">换行</a></li>
-            <li><a href="#css-comments">注释</a></li>
-            <li><a href="#css-quote-marks">引号</a></li>
-            <li><a href="#css-naming-rule">命名</a></li>
-            <li><a href="#css-declaration-order">属性声明顺序</a></li>
-            <li><a href="#css-color">颜色</a></li>
-            <li><a href="#css-shorthand">属性简写</a></li>
-            <li><a href="#css-media-queries">媒体查询</a></li>
-            <li><a href="#css-scss">LESS或SCSS相关</a></li>
-            <li><a href="#css-miscellaneous">杂项</a></li>
+          <h4  data-toggle="collapse" data-target="#nav-css">
+            <span class="triangle-up"></span>3.0 CSS, LESS
+           </h4>
+          <ul id="nav-css" class="collapse ">
+            <li><a href="#css-indentation">3.1 缩进</a></li>
+            <li><a href="#css-semicolon">3.2 分号</a></li>
+            <li><a href="#css-space">3.3 空格</a></li>
+            <li><a href="#css-blank-line">3.4 空行</a></li>
+            <li><a href="#css-new-line">3.5 换行</a></li>
+            <li><a href="#css-comments">3.6 注释</a></li>
+            <li><a href="#css-quote-marks">3.7 引号</a></li>
+            <li><a href="#css-naming-rule">3.8 命名</a></li>
+            <li><a href="#css-declaration-order">3.9 属性声明顺序</a></li>
+            <li><a href="#css-color">3.10 颜色</a></li>
+            <li><a href="#css-shorthand">3.11 属性简写</a></li>
+            <li><a href="#css-media-queries">3.12 媒体查询</a></li>
+            <li><a href="#css-scss">3.13 LESS或SCSS相关</a></li>
+            <li><a href="#css-miscellaneous">3.14 杂项</a></li>
           </ul>
         </li>
         <!-- css-title End -->
+
+        <!-- JavaScript Begin -->
+        <li>
+          <h4 data-toggle="collapse" data-target="#nav-javascript">
+            <span class="triangle-up"></span>4.0 JavaScript
+          </h4>
+          <ul id="nav-javascript" class="collapse show">
+            <li><a href="#js-indentation">4.1 缩进</a></li>
+            <li><a href="#js-line-max-length">4.2 单行长度</a></li>
+            <li><a href="#js-semicolon">4.3 分号</a></li>
+            <li><a href="#js-space">4.4 空格</a></li>
+            <li><a href="#js-blank-line">4.5 空行</a></li>
+            <li><a href="#js-new-line">4.6 换行</a></li>
+            <li><a href="#js-comments-single-line">4.7 单行注释</a></li>
+            <li><a href="#js-comments-multiline">4.8 多行注释</a></li>
+            <li><a href="#js-comments-documentation">4.9 文档注释</a></li>
+            <li><a href="#js-quote-marks">4.10 引号</a></li>
+            <li><a href="#js-variable-naming">4.11 变量命名</a></li>
+            <li><a href="#js-variable-declaration">4.12 变量声明</a></li>
+            <li><a href="#js-function">4.13 函数</a></li>
+            <li><a href="#js-array-object">4.14 数组、对象</a></li>
+            <li><a href="#js-brace">4.15 括号</a></li>
+            <li><a href="#js-literal-value-null">4.16 null</a></li><a href="#js-literal-value-null">
+          </a><li><a href="#js-literal-value-null"></a><a href="#js-literal-value-undefined">4.17 undefined</a></li><a href="#js-literal-value-undefined">
+          </a><li><a href="#js-literal-value-undefined"></a><a href="#js-jshint">4.18 jshint</a></li><a href="#js-jshint">
+          </a><li><a href="#js-jshint"></a><a href="#js-miscellaneous">4.19 杂项</a></li>
+          </ul>
+        </li>
+        <!-- JavaScript End -->
+
+
 
       </ul>
     </nav>
@@ -1026,7 +1105,7 @@
         </div>
         <!-- html End -->
 
-        <!-- html End -->
+        <!-- css-less End -->
         <div class="css-less">
           <div class="heading" id="css">
             <h2>CSS, SCSS</h2>
@@ -1039,13 +1118,13 @@
             </div>
             <div class="col">
               <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.element</span> <span class="p">{</span>
-  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
-  <span class="k">top</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="k">left</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">10px</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">10px</span>
 
-  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">50px</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">50px</span>
 <span class="p">}</span></code></pre></div>
             </div>
           </div>
@@ -1879,7 +1958,755 @@
           </div>
 
         </div>
-        <!-- html End -->
+        <!-- css-less End -->
+
+        <!-- JavaScript Begin -->
+        <div class="javascript">
+          <div class="heading" id="javascript">
+            <h2>JavaScript</h2>
+            <p>配合ESlint强制检测使用</p>
+          </div>
+
+          <div class="section" id="js-indentation">
+            <div class="col">
+              <h3>缩进</h3>
+              <p>使用2个空格</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">x</span> <span class="o">+=</span> <span class="mi">10</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-line-max-length">
+            <div class="col">
+              <h3>单行长度</h3>
+              <p>不要超过80，但如果编辑器开启word wrap可以不考虑单行长度。</p>
+            </div>
+          </div>
+
+          <div class="section" id="js-semicolon">
+            <div class="col">
+              <h3>分号</h3>
+              <p>非语法需要，都不需要</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* var declaration */</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="cm">/* expression statement */</span>
+<span class="nx">x</span><span class="o">++</span>
+
+<span class="cm">/* do-while */</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="nx">x</span><span class="o">++</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-space">
+            <div class="col">
+              <h3>空格</h3>
+              <p>以下几种情况不需要空格：</p>
+              <ul>
+                <li>对象的属性名后</li>
+                <li>前缀一元运算符后</li>
+                <li>后缀一元运算符前</li>
+                <li>函数调用括号前</li>
+                <li>无论是函数声明还是函数表达式，'('前不要空格</li>
+                <li>数组的'['后和']'前</li>
+                <li>对象的'{'后和'}'前</li>
+                <li>运算符'('后和')'前</li>
+              </ul>
+              <p>以下几种情况需要空格：</p>
+              <ul>
+                <li>二元运算符前后</li>
+                <li>三元运算符'?:'前后</li>
+                <li>代码块'{'前</li>
+                <li>下列关键字前：<code>else</code>, <code>while</code>, <code>catch</code>, <code>finally</code></li>
+                <li>下列关键字后：<code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>do</code>, <code>switch</code>, <code>case</code>, <code>try</code>, <code>catch</code>, <code>finally</code>, <code>with</code>, <code>return</code>, <code>typeof</code></li>
+                <li>单行注释'//'后（若单行注释和代码同行，则'//'前也需要），多行注释'*'后</li>
+                <li>对象的属性值前</li>
+                <li>for循环，分号后留有一个空格，前置条件如果有多个，逗号后留一个空格</li>
+                <li>无论是函数声明还是函数表达式，'{'前一定要有空格</li>
+                <li>函数的参数之间</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">b</span> <span class="o">:</span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="o">++</span> <span class="nx">x</span>
+<span class="nx">y</span> <span class="o">++</span>
+<span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span><span class="o">?</span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span>
+
+<span class="c1">// good</span>
+<span class="o">++</span><span class="nx">x</span>
+<span class="nx">y</span><span class="o">++</span>
+<span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">2</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span> <span class="p">)</span><span class="o">*</span><span class="mi">3</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="c1">// no space before '(', one space before '{', one space between function parameters</span>
+<span class="kd">var</span> <span class="nx">doSomething</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
+
+<span class="c1">// no space before '('</span>
+<span class="nx">doSomething</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+
+<span class="c1">// not good</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="nx">x</span><span class="o">++</span><span class="p"></span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">x</span><span class="o">++</span><span class="p"></span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-blank-line">
+            <div class="col">
+              <h3>空行</h3>
+              <p>以下几种情况需要空行：</p>
+              <ul>
+                <li>变量声明后（当变量声明在代码块的最后一行时，则无需空行）</li>
+                <li>注释前（当注释在代码块的第一行时，则无需空行）</li>
+                <li>代码块后（在函数调用、数组、对象中则无需空行）</li>
+                <li>文件最后保留一个空行</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// need blank line after variable declaration</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">// not need blank line when variable declaration is last expression in the current block</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">// need blank line before line comment</span>
+<span class="nx">a</span><span class="o">++</span>
+
+<span class="kd">function</span> <span class="nx">b</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// not need blank line when comment is first line of block</span>
+  <span class="k">return</span> <span class="nx">a</span>
+<span class="p">}</span>
+
+<span class="c1">// need blank line after blocks</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span>
+  <span class="p">}</span>
+
+  <span class="k">continue</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">foo</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">1</span>
+  <span class="p">},</span>
+
+  <span class="nx">bar</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">2</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// not need blank line when in argument list, array, object</span>
+<span class="nx">func</span><span class="p">(</span>
+  <span class="mi">2</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nx">a</span><span class="o">++</span>
+  <span class="p">},</span>
+  <span class="mi">3</span>
+<span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="mi">2</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nx">a</span><span class="o">++</span>
+  <span class="p">},</span>
+  <span class="mi">3</span>
+<span class="p">]</span>
+
+
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">a</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">a</span><span class="o">++</span>
+  <span class="p">},</span>
+  <span class="nx">c</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-new-line">
+            <div class="col">
+              <h3>换行</h3>
+              <p>换行的地方，行末必须有','或者运算符；</p>
+              <p>以下几种情况不需要换行：</p>
+              <ul>
+                <li>下列关键字后：<code>else</code>, <code>catch</code>, <code>finally</code></li>
+                <li>代码块'{'前</li>
+              </ul>
+              <p>以下几种情况需要换行：</p>
+              <ul>
+                <li>代码块'{'后和'}'前</li>
+                <li>变量赋值后</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">b</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">,</span> <span class="nx">c</span><span class="o">:</span> <span class="mi">2</span>
+<span class="p">};</span>
+
+<span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span>
+    <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">b</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">c</span><span class="o">:</span> <span class="mi">2</span>
+<span class="p">};</span>
+
+<span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">?</span>
+    <span class="mi">1</span> <span class="o">:</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">// no need line break with 'else', 'catch', 'finally'</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span>
+    <span class="nx">c</span><span class="p">,</span> <span class="nx">bar</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span><span class="p">,</span>
+    <span class="nx">foo</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">bar</span> <span class="o">=</span> <span class="mi">8</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-comments-single-line">
+            <div class="col">
+              <h3>单行注释</h3>
+              <p>双斜线后，必须跟一个空格；</p>
+              <p>缩进与下一行代码保持一致；</p>
+              <p>可位于一个代码行的末尾，与代码间隔一个空格。
+              </p></div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// if you made it here, then all security checks passed</span>
+  <span class="nx">allowed</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">zhangsan</span> <span class="o">=</span> <span class="s1">'zhangsan'</span><span class="p"></span> <span class="c1">// one space after code</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-comments-multiline">
+            <div class="col">
+              <h3>多行注释</h3>
+              <p>最少三行, '*'后跟一个空格，具体参照右边的写法；</p>
+              <p>建议在以下情况下使用：
+              </p><ul>
+              <li>难于理解的代码段</li>
+              <li>可能存在错误的代码段</li>
+              <li>浏览器特殊的HACK代码</li>
+              <li>业务逻辑强相关的代码</li>
+            </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*</span>
+<span class="cm"> * one space after '*'</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-comments-documentation">
+            <div class="col">
+              <h3>文档注释</h3>
+              <p>各类标签@param, @method等请参考 <a href="http://www.css88.com/doc/jsdoc/about-namepaths.html" target="_blank">JSDoc中文</a>、<a href="http://usejsdoc.org/" target="_blank">usejsdoc</a>和<a href="http://yuri4ever.github.io/jsdoc/" target="_blank">JSDoc Guide</a>；</p>
+              <p>建议在以下情况下使用：</p>
+              <ul>
+                <li>所有常量</li>
+                <li>所有函数</li>
+                <li>所有类</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
+<span class="cm"> * @func</span>
+<span class="cm"> * @desc 一个带参数的函数</span>
+<span class="cm"> * @param {string} a - 参数a</span>
+<span class="cm"> * @param {number} b=1 - 参数b默认值为1</span>
+<span class="cm"> * @param {string} c=1 - 参数c有两种支持的取值&lt;/br&gt;1—表示x&lt;/br&gt;2—表示xx</span>
+<span class="cm"> * @param {object} d - 参数d为一个对象</span>
+<span class="cm"> * @param {string} d.e - 参数d的e属性</span>
+<span class="cm"> * @param {string} d.f - 参数d的f属性</span>
+<span class="cm"> * @param {object[]} g - 参数g为一个对象数组</span>
+<span class="cm"> * @param {string} g.h - 参数g数组中一项的h属性</span>
+<span class="cm"> * @param {string} g.i - 参数g数组中一项的i属性</span>
+<span class="cm"> * @param {string} [j] - 参数j是一个可选参数</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-quote-marks">
+            <div class="col">
+              <h3>引号</h3>
+              <p>最外层统一使用单引号。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"test"</span><span class="p"></span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="s1">'foo'</span><span class="p">,</span>
+    <span class="nx">z</span> <span class="o">=</span> <span class="s1">'&lt;div id="test"&gt;&lt;/div&gt;'</span><span class="p"></span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-variable-naming">
+            <div class="col">
+              <h3>变量命名</h3>
+              <ul>
+                <li>标准变量采用驼峰式命名（除了对象的属性外，主要是考虑到cgi返回的数据）</li>
+                <li>'ID'在变量名中全大写</li>
+                <li>'URL'在变量名中全大写</li>
+                <li>'Android'在变量名中大写第一个字母</li>
+                <li>'iOS'在变量名中小写第一个，大写后两个字母</li>
+                <li>常量全大写，用下划线连接</li>
+                <li>构造函数，大写第一个字母</li>
+                <li>jquery对象必须以'$'开头命名</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">thisIsMyName</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">goodID</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">reportURL</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">AndroidVersion</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">iOSVersion</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">MAX_COUNT</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">$body</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-variable-declaration">
+            <div class="col">
+              <h3>变量声明</h3>
+              <p>一个函数作用域中所有的变量声明尽量提到函数首部，用一个var或let声明，不允许出现两个连续的var或let声明。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">doSomethingWithItems</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// use one var</span>
+  <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">i</span><span class="p">,</span>
+    <span class="nx">len</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+         </div>
+       </div>
+
+          <div class="section" id="js-function">
+            <div class="col">
+              <h3>函数</h3>
+              <p>无论是函数声明还是函数表达式，'('前不要空格，但'{'前一定要有空格；</p>
+              <p>函数调用括号前不需要空格；</p>
+              <p>立即执行函数外必须包一层括号；</p>
+              <p>不要给inline function命名；</p>
+              <p>参数之间用', '分隔，注意逗号后有一个空格。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// no space before '(', but one space before'{'</span>
+<span class="kd">var</span> <span class="nx">doSomething</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">doSomething</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="nx">doSomething</span> <span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="nx">doSomething</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+
+<span class="c1">// requires parentheses around immediately invoked function expressions</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">})();</span>
+
+<span class="c1">// not good</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">});</span>
+
+<span class="c1">// good</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">});</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}];</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}];</span>
+
+<span class="c1">// use ', ' between function parameters</span>
+<span class="kd">var</span> <span class="nx">doSomething</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">};</span></code></pre></div>
+            </div>
+          </div>
+
+
+          <div class="section" id="js-array-object">
+            <div class="col">
+              <h3>数组、对象</h3>
+              <p>对象属性名不需要加引号；</p>
+              <p>对象以缩进的形式书写，不要写在一行；</p>
+              <p>数组、对象最后不要有逗号。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'b'</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="nx">b</span><span class="o">:</span> <span class="mi">1</span><span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">c</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">c</span><span class="o">:</span> <span class="mi">2</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-brace">
+            <div class="col">
+              <h3>括号</h3>
+              <p>下列关键字后必须有大括号（即使代码块的内容只有一行）：<code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>do</code>, <code>switch</code>, <code>try</code>, <code>catch</code>, <code>finally</code>, <code>with</code>。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span>
+  <span class="nx">doSomething</span><span class="p">()</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">doSomething</span><span class="p">()</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+
+          <div class="section" id="js-literal-value-null">
+            <div class="col">
+              <h3>null</h3>
+              <p>适用场景：</p>
+              <ul>
+                <li>初始化一个将来可能被赋值为对象的变量</li>
+                <li>与已经初始化的变量做比较</li>
+                <li>作为一个参数为对象的函数的调用传参</li>
+                <li>作为一个返回对象的函数的返回值</li>
+              </ul>
+              <p>不适用场景：</p>
+              <ul>
+                <li>不要用null来判断函数调用时有无传参</li>
+                <li>不要与未初始化的变量做比较</li>
+              </ul>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">b</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// not mean b is not supply</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">a</span><span class="p"></span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-literal-value-undefined">
+            <div class="col">
+              <h3>undefined</h3>
+              <p>永远不要直接使用undefined进行变量判断；</p>
+              <p>使用typeof和字符串'undefined'对变量进行判断。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">person</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">person</span> <span class="o">===</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-jshint">
+            <div class="col">
+              <h3>jshint</h3>
+              <p>用'===', '!=='代替'==', '!='；</p>
+              <p>for-in里一定要有hasOwnProperty的判断；</p>
+              <p>不要在内置对象的原型上添加方法，如Array, Date；</p>
+              <p>不要在内层作用域的代码里声明了变量，之后却访问到了外层作用域的同名变量；</p>
+              <p>变量不要先使用后声明；</p>
+              <p>不要在一句代码中单单使用构造函数，记得将其赋值给某个变量；</p>
+              <p>不要在同个作用域下声明同名变量；</p>
+              <p>不要在一些不需要的地方加括号，例：delete(a.b)；</p>
+              <p>不要使用未声明的变量（全局变量需要加到.jshintrc文件的globals属性里面）；</p>
+              <p>不要声明了变量却不使用；</p>
+              <p>不要在应该做比较的地方做赋值；</p>
+              <p>debugger不要出现在提交的代码里；</p>
+              <p>数组中不要存在空元素；</p>
+              <p>不要在循环内部声明函数；</p>
+              <p>不要像这样使用构造函数，例：<code>new function () { ... }</code>, <code>new Object</code>；</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// be sure that obj[key] belongs to the object and was not inherited</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">x</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+
+<span class="c1">// not good</span>
+<span class="k">delete</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">attr</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="k">delete</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">attr</span><span class="p">;</span>
+
+<span class="c1">// not good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">,</span> <span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="p">}(</span><span class="nx">i</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">singleton</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">privateVar</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">publicMethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">privateVar</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">publicMethod2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">privateVar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span></code></pre></div>
+            </div>
+          </div>
+
+          <div class="section" id="js-miscellaneous">
+            <div class="col">
+              <h3>杂项</h3>
+              <p>不要混用tab和space；</p>
+              <p>不要在一处使用多个tab或space；</p>
+              <p>换行符统一用'LF'；</p>
+              <p>对上下文this的引用只能使用'_this', 'that', 'self'其中一个来命名；</p>
+              <p>行尾不要有空白字符；</p>
+              <p>switch的falling through和no default的情况一定要有注释特别说明；</p>
+              <p>不允许有空的代码块。</p>
+            </div>
+            <div class="col">
+              <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// not good</span>
+<span class="kd">var</span> <span class="nx">a</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">Person</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// not good</span>
+    <span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="c1">// good</span>
+    <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="c1">// good</span>
+    <span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="c1">// good</span>
+    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">switch</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="p">...</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="p">...</span>
+    <span class="c1">// why fall through</span>
+    <span class="k">case</span> <span class="mi">4</span>
+        <span class="p">...</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="c1">// why no default</span>
+<span class="p">}</span>
+
+<span class="c1">// not good with empty block</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span></code></pre></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- JavaScript End -->
 
 
       </div>
@@ -1890,12 +2717,28 @@
 
   </div>
 </div>
+<a href="#top" id="toTop" class="to-top hide"></a>
+<style>
+  .to-top {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    width: 128px;
+    height: 128px;
+    background-image: url('https://alloyteam.github.io/CodeGuide/images/up.png');
+    background-repeat: no-repeat;
+    opacity: .4;
+    filter: alpha(opacity=40);
+  }
+  .hide { display: none; }
+</style>
+
 <!--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>-->
 <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
 
 
 <!-- 新 Bootstrap4 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">-->
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -1914,23 +2757,43 @@
       clearTimeout(method.tId)
       method.tId = setTimeout(function () {
         method.call(context)
-      }, 0)
+      }, 30)
     }
+
     var sidebarWrap = document.querySelector('#sidebarWrap')
+    var toTop = document.querySelector('#toTop')
     var scrollTop = function  () {
       // 距离页面顶部滚动的距离
       var scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
       if (scrollTop > 300) {
         sidebarWrap.classList.add('fixed')
+        toTop.classList.remove('hide')
       } else {
         sidebarWrap.classList.remove('fixed')
+        toTop.classList.add('hide')
       }
     }
+
     scrollTop()
+
     window.onscroll = function () {
       // throttle(scrollTop)
       scrollTop()
     }
+
+    // 设置侧边栏高度
+    var htmlHeight = 0
+    function resizeHeight () {
+      htmlHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight)
+      sidebarWrap.style.maxHeight = htmlHeight - 30 + 'px'
+    }
+    resizeHeight()
+
+    window.onresize = function () {
+      throttle(resizeHeight)
+      // resizeHeight()
+    }
+
   })
 </script>
 
